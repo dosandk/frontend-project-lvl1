@@ -2,7 +2,7 @@
   "name": "frontend-project-lvl1",
   "type": "module",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-even": "bin/brain-even.js"
   },
   "version": "1.0.0",
   "description": "",
