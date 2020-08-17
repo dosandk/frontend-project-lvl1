@@ -9,22 +9,18 @@ const answersMap = {
   false: NO,
 };
 
-export default class BrainPrime {
-  static get rule() {
-    return `Answer "${YES}" if the number is prime, otherwise answer "${NO}".`;
-  }
-
+const brainPrime = {
+  rule: `Answer "${YES}" if the number is prime, otherwise answer "${NO}".`,
   getQuestion() {
     const min = 0;
     const max = 100;
     const number = generateRandomNumber(min, max);
+    const question = number;
 
-    this.question = number;
     this.correctAnswer = isPrime(number);
 
-    return this.question;
-  }
-
+    return question;
+  },
   validate(answer) {
     const isPrimeNumber = this.correctAnswer;
 
@@ -39,5 +35,7 @@ export default class BrainPrime {
       correctAnswer: answersMap[this.correctAnswer],
       isValid: (answer === YES && isPrimeNumber) || (answer === NO && !isPrimeNumber),
     };
-  }
-}
+  },
+};
+
+export default brainPrime;

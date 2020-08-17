@@ -1,13 +1,12 @@
 import readlineSync from 'readline-sync';
-import * as Games from './games/index.js';
+import * as games from './games/index.js';
 
 const stepsCount = 3;
 
 export function startGame(gameName = 'BrainEven') {
-  const Game = Games[gameName];
-  const game = new Game();
+  const game = games[gameName];
 
-  console.log(Game.rule);
+  console.log(game.rule);
 
   const askQuestion = (step) => {
     if (step === 0) {

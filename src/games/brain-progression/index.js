@@ -1,10 +1,7 @@
 import generateRandomNumber from '../utils/generate-random-number.js';
 
-export default class BrainProgression {
-  static get rule() {
-    return 'What number is missing in the progression?';
-  }
-
+const brainProgression = {
+  rule: 'What number is missing in the progression?',
   getQuestion() {
     const progressionSize = 10;
     const missedItemIndex = generateRandomNumber(0, progressionSize - 1);
@@ -21,15 +18,14 @@ export default class BrainProgression {
       return index + progressionStart;
     });
 
-    this.question = progression.join(' ');
-
-    return this.question;
-  }
-
+    return progression.join(' ');
+  },
   validate(answer) {
     return {
       correctAnswer: this.correctAnswer,
       isValid: parseInt(answer, 10) === this.correctAnswer,
     };
-  }
-}
+  },
+};
+
+export default brainProgression;

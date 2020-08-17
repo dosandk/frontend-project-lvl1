@@ -1,14 +1,8 @@
 import generateRandomNumber from '../utils/generate-random-number.js';
 
-export default class BrainCalc {
-  static get rule() {
-    return 'What is the result of the expression?';
-  }
-
-  constructor() {
-    this.operations = ['+', '-', '*'];
-  }
-
+const brainCalc = {
+  operations: ['+', '-', '*'],
+  rule: 'What is the result of the expression?',
   getQuestion() {
     const min = 1;
     const max = 50;
@@ -16,17 +10,18 @@ export default class BrainCalc {
     const number2 = generateRandomNumber(min, max);
     const operationIndex = generateRandomNumber(0, this.operations.length - 1);
 
-    this.question = `${number1} ${this.operations[operationIndex]} ${number2}`;
+    const question = `${number1} ${this.operations[operationIndex]} ${number2}`;
     // eslint-disable-next-line no-eval
-    this.correctAnswer = eval(this.question);
+    this.correctAnswer = eval(question);
 
-    return this.question;
-  }
-
+    return question;
+  },
   validate(answer) {
     return {
       correctAnswer: this.correctAnswer,
       isValid: this.correctAnswer === parseInt(answer, 10),
     };
-  }
-}
+  },
+};
+
+export default brainCalc;

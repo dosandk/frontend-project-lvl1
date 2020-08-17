@@ -1,13 +1,13 @@
-import BrainEven from './brain-even/index.js';
-import BrainCalc from './brain-calc/index.js';
-import BrainGcd from './brain-gcd/index.js';
-import BrainProgression from './brain-progression/index.js';
-import BrainPrime from './brain-prime/index.js';
+import brainEven from './brain-even/index.js';
+import brainCalc from './brain-calc/index.js';
+import brainGcd from './brain-gcd/index.js';
+import brainProgression from './brain-progression/index.js';
+import brainPrime from './brain-prime/index.js';
 
 export {
-  BrainEven,
-  BrainCalc,
-  BrainGcd,
-  BrainProgression,
-  BrainPrime,
+  brainEven,
+  brainCalc,
+  brainGcd,
+  brainProgression,
+  brainPrime,
 };
