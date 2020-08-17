@@ -3,7 +3,7 @@ import * as games from './games/index.js';
 
 const stepsCount = 3;
 
-export function startGame(gameName = 'BrainEven') {
+export function startGame(gameName = 'brainEven') {
   const game = games[gameName];
 
   console.log(game.rule);
