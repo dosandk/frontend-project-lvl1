@@ -17,17 +17,16 @@ export default class BrainCalc {
     const operationIndex = generateRandomNumber(0, this.operations.length - 1);
 
     this.question = `${number1} ${this.operations[operationIndex]} ${number2}`;
+    // eslint-disable-next-line no-eval
+    this.correctAnswer = eval(this.question);
 
     return this.question;
   }
 
   validate(answer) {
-    // eslint-disable-next-line no-eval
-    const correctAnswer = eval(this.question);
-
     return {
-      correctAnswer,
-      isValid: correctAnswer === parseInt(answer, 10),
+      correctAnswer: this.correctAnswer,
+      isValid: this.correctAnswer === parseInt(answer, 10),
     };
   }
 }

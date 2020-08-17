@@ -20,7 +20,11 @@ export default class BrainEven {
   getQuestion() {
     const min = 1;
     const max = 100;
-    this.question = generateRandomNumber(min, max);
+    const number = generateRandomNumber(min, max);
+    const isEven = BrainEven.checkNumberParity(number);
+
+    this.question = number;
+    this.correctAnswer = answersMap[isEven];
 
     return this.question;
   }
@@ -30,13 +34,13 @@ export default class BrainEven {
 
     if (answer !== YES && answer !== NO) {
       return {
-        correctAnswer: answersMap[isEven],
+        correctAnswer: this.correctAnswer,
         isValid: false,
       };
     }
 
     return {
-      correctAnswer: answersMap[isEven],
+      correctAnswer: this.correctAnswer,
       isValid: (answer === YES && isEven) || (answer === NO && !isEven),
     };
   }

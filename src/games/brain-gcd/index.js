@@ -13,17 +13,15 @@ export default class BrainGcd {
     const number2 = generateRandomNumber(min, max);
 
     this.question = `${number1} ${number2}`;
+    this.correctAnswer = gcd(number1, number2);
 
     return this.question;
   }
 
   validate(answer) {
-    const [number1, number2] = this.question.split(' ').map((item) => parseInt(item, 10));
-    const correctAnswer = gcd(number1, number2);
-
     return {
-      correctAnswer,
-      isValid: parseInt(answer, 10) === correctAnswer,
+      correctAnswer: this.correctAnswer,
+      isValid: parseInt(answer, 10) === this.correctAnswer,
     };
   }
 }
