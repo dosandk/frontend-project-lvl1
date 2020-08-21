@@ -1,7 +1,7 @@
 # frontend-project-lvl1
 
-![Node.js CI](https://github.com/dosandk/frontend-project-lvl1/workflows/Node.js%20CI/badge.svg)
-<a href="https://codeclimate.com/github/dosandk/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/fe983dddec14a2c9a011/maintainability" /></a>
+[![](https://github.com/dosandk/frontend-project-lvl1/workflows/Node.js%20CI/badge.svg)](https://github.com/dosandk/frontend-project-lvl1/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/fe983dddec14a2c9a011/maintainability)](https://codeclimate.com/github/dosandk/frontend-project-lvl1/maintainability)
 
 ## Brain-even game
 
