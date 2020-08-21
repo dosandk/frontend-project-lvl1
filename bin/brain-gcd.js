@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-import { askName, startGame, finishGame } from '../src/index.js';
+import runGame from '../src/games/brain-gcd.js';
 
-const name = askName();
-const result = startGame('brainGcd');
-
-finishGame(result, name);
+runGame();
