@@ -13,7 +13,7 @@ const getGameData = () => {
   const question = generateRandomNumber(min, max);
 
   return {
-    question: String(question),
+    question,
     correctAnswer: (isEven(question) ? YES : NO),
   };
 };

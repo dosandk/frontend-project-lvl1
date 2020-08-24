@@ -25,10 +25,10 @@ const getGameData = () => {
   const replacerIndex = generateRandomNumber(0, progressionSize - 1);
   const progressionStep = generateRandomNumber(2, 6);
   const progression = createProgression(progressionStart, progressionStep, progressionSize);
-  const question = progression.map((item, index) => (index === replacerIndex ? replacer : item));
+  const question = progression.map((item, index) => (index === replacerIndex ? replacer : item)).join(' ');
 
   return {
-    question: question.join(' '),
+    question,
     correctAnswer: String(progression[replacerIndex]),
   };
 };
