@@ -3,24 +3,25 @@ import generateRandomNumber from './utils/generate-random-number.js';
 
 const YES = 'yes';
 const NO = 'no';
-
-const isPrime = (num) => {
-  for (let i = 2; i < num; i += 1) {
-    if (num % i === 0) return false;
-  }
-
-  return num > 1;
-};
-
+const min = 0;
+const max = 100;
 const gameRule = `Answer "${YES}" if the number is prime, otherwise answer "${NO}".`;
 
-const getQuestion = () => {
-  const min = 0;
-  const max = 100;
+const isPrime = (number) => {
+  for (let divisor = 2; divisor < number; divisor += 1) {
+    if (number % divisor === 0) return false;
+  }
 
-  return generateRandomNumber(min, max);
+  return number > 1;
 };
 
-const getCorrectAnswer = (question) => (isPrime(question) ? YES : NO);
+const getGameData = () => {
+  const question = generateRandomNumber(min, max);
 
-export default () => runGame(gameRule, getQuestion, getCorrectAnswer);
+  return {
+    question,
+    correctAnswer: (isPrime(question) ? YES : NO),
+  };
+};
+
+export default () => runGame(gameRule, getGameData);
